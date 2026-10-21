@@ -1,7 +1,7 @@
 {
   "metadata": {
-    "version": "1.5.0",
-    "generatedAt": "2026-10-19T11:07:10.633972880Z",
+    "version": "1.6.0",
+    "generatedAt": "2026-10-21T03:07:32.524283584Z",
     "templateType": "trip_d",
     "propertyId": "c1403473-b32f-44f9-aeaf-d3b05cbfbc13",
     "homepageId": "50726bd5-2c16-496d-869f-d4c31d96ec29"
@@ -6720,7 +6720,10 @@
           ],
           "nameEn": ""
         }
-      ]
+      ],
+      "footer": {
+        "ruralStayMark": null
+      }
     }
   }
 }
