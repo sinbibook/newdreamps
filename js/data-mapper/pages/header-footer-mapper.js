@@ -270,7 +270,7 @@
   // MAPPER: roomtypes[].name → [data-rooms-submenu] (data-room-menu-link 앵커 뒤에 li 동적 생성)
   HeaderFooterMapper.prototype.mapRoomMenu = function () {
     var self = this;
-    var roomItems = this.getRoomMenuItems(this.getRoomtypes(), function (rt) { return (rt && rt.name) || ''; });
+    var roomItems = this.getRoomMenuItems(this.getRoomtypes(), function (rt) { return self.getRoomtypeName(rt); });
     document.querySelectorAll('[data-rooms-submenu]').forEach(function (container) {
       container.querySelectorAll('[data-generated="room"]').forEach(function (li) { li.remove(); });
       roomItems.forEach(function (item) {
@@ -281,6 +281,8 @@
         var a = document.createElement('a');
         a.href = self.getRoomMenuLink(item);
         a.textContent = name;
+        // 긴 객실명은 CSS 로 한 줄 말줄임한다 — 전체 이름은 툴팁으로 보여준다
+        a.title = name;
         li.appendChild(a);
         container.appendChild(li);
       });
